@@ -5,7 +5,6 @@ import {
   ShoppingCart,
   Heart,
   Menu,
-  LogIn,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -17,14 +16,7 @@ import { ThemeToggle } from "@/app/components/ThemeToggle";
 import { Sidebar } from "@/app/components/Sidebar";
 import { Sheet, SheetContent } from "@/app/components/ui/sheet";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/app/components/ui/dropdown-menu";
-
-export function Header() {
+export function Navbar() {
   const [cartCount] = useState(3);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showTopBar, setShowTopBar] = useState(true);
@@ -64,8 +56,9 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors">
         {/* Top Bar */}
         <div
-          className={`overflow-hidden transition-all duration-700 ${showTopBar ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-            }`}
+          className={`overflow-hidden transition-all duration-700 ${
+            showTopBar ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
           <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2 px-4">
             <div className="max-w-7xl mx-auto text-center text-sm">
@@ -74,7 +67,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Main Header */}
+        {/* Main Navbar */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex items-center justify-between">
             {/* LEFT */}
@@ -131,47 +124,6 @@ export function Header() {
               </Button>
 
               <ThemeToggle />
-
-              {/* LOGIN DROPDOWN */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="hidden lg:flex items-center gap-2 border-blue-900 dark:border-blue-400 text-blue-900 dark:text-blue-400"
-                  >
-                    <LogIn className="h-4 w-4" />
-                    Login
-                  </Button>
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent
-                  align="end"
-                  className="w-56 rounded-xl shadow-xl"
-                >
-                  <DropdownMenuItem asChild>
-                    <Link href="/login" className="flex flex-col gap-1 py-2">
-                      <span className="font-medium">Continue as User</span>
-                      <span className="text-xs text-muted-foreground">
-                        Buy handcrafted products
-                      </span>
-                    </Link>
-                  </DropdownMenuItem>
-
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="/sellerauth/login"
-                      className="flex flex-col gap-1 py-2"
-                    >
-                      <span className="font-medium">Login as Seller</span>
-                      <span className="text-xs text-muted-foreground">
-                        Manage your store & orders
-                      </span>
-                    </Link>
-
-
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
 
               {/* Wishlist */}
               <Link href="/wishlist">
