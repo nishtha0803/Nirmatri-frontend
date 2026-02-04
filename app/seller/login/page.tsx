@@ -94,7 +94,7 @@ const [loading, setLoading] = useState(false);
       setLoading(false);
 
       // ✅ LOGIN SUCCESS → DASHBOARD
-      router.push("/sellerdashboard");
+      router.push("/seller/dashboard");
     }, 1500);
   }}
   className={`
