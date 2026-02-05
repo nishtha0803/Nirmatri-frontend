@@ -48,6 +48,7 @@ export function Navbar({ onUserClick }: Props) {
       className="
         sticky top-0 z-[100]
         backdrop-blur-xl
+<<<<<<< HEAD
         bg-gradient-to-r
         from-[#CF9893]/40
         via-[#F6EAEA]
@@ -62,6 +63,23 @@ export function Navbar({ onUserClick }: Props) {
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#CF9893] via-[#6968A6] to-[#085078]" />
 
       {/* 🔹 TOP PROMO BAR */}
+=======
+
+        bg-gradient-to-r
+        from-[#CF9893]/30 via-white/70 to-[#6968A6]/30
+
+        dark:bg-gradient-to-r
+        dark:from-gray-900
+        dark:to-gray-900
+
+        border-b border-[#6968A6]/20
+        dark:border-white/15
+
+      
+      "
+    >
+      {/* TOP BAR */}
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
       <div
         className={`overflow-hidden transition-all duration-500 ${
           showTopBar ? "max-h-10" : "max-h-0"
@@ -72,7 +90,11 @@ export function Navbar({ onUserClick }: Props) {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* 🔹 MAIN NAVBAR */}
+=======
+      {/* MAIN NAVBAR */}
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
       <div className="h-14">
         <div className="max-w-7xl mx-auto h-full px-4 flex items-center gap-3">
           {/* LOGO */}
@@ -84,7 +106,7 @@ export function Navbar({ onUserClick }: Props) {
             />
           </Link>
 
-          {/* DESKTOP SEARCH */}
+          {/* SEARCH */}
           <div className="hidden md:flex flex-1 justify-center">
             <form action="/search" className="relative w-full max-w-xl">
               <Input
@@ -93,8 +115,17 @@ export function Navbar({ onUserClick }: Props) {
                 placeholder="Search handcrafted products..."
                 className="
                   w-full h-10 pl-5 pr-12 rounded-full
+<<<<<<< HEAD
                   bg-white
                   border border-[#6968A6]/30
+=======
+                  bg-white/95
+                  dark:bg-white/90
+                  text-gray-900
+                  placeholder:text-gray-500
+                  border border-[#6968A6]/20
+                  dark:border-white/30
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
                   focus:ring-2 focus:ring-[#6968A6]/40
                 "
               />
@@ -113,12 +144,12 @@ export function Navbar({ onUserClick }: Props) {
             </form>
           </div>
 
-          {/* RIGHT ACTIONS */}
+          {/* ACTIONS */}
           <div className="flex items-center gap-2 ml-auto">
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden text-white"
               onClick={() => setMobileSearchOpen((p) => !p)}
             >
               <Search className="h-6 w-6" />
@@ -131,20 +162,31 @@ export function Navbar({ onUserClick }: Props) {
               size="icon"
               onClick={onUserClick}
               className="
+<<<<<<< HEAD
                 rounded-full border border-[#6968A6]/40
                 hover:bg-gradient-to-br
                 hover:from-[#CF9893]/50
                 hover:to-[#6968A6]/50
+=======
+                rounded-full
+                border border-[#6968A6]/30
+                dark:border-white/40
+                hover:bg-white/20
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
                 transition-all
               "
             >
-              <User className="h-5 w-5" />
+              <User className="h-5 w-5 text-gray-900 dark:text-white" />
             </Button>
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* 🔹 MOBILE SEARCH */}
+=======
+      {/* MOBILE SEARCH */}
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
       <div
         ref={searchRef}
         className={`md:hidden overflow-hidden transition-all duration-300 ${
@@ -157,7 +199,16 @@ export function Navbar({ onUserClick }: Props) {
             name="q"
             type="search"
             placeholder="Search products..."
+<<<<<<< HEAD
             className="flex-1 h-11 rounded-full border border-[#6968A6]/30"
+=======
+            className="
+              flex-1 h-11 rounded-full
+              bg-white/95
+              border border-white/30
+              text-gray-900
+            "
+>>>>>>> 0e0815fd573b78c3bba424205cf5377e608744c4
           />
           <Button
             size="icon"
