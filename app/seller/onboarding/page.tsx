@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from '@/app/contexts/ThemeContext';
 import { useRouter } from "next/navigation";
+import { Input } from "@/app/components/ui/input";
 
 // ============================================
 // CONFIGURATION
@@ -888,7 +889,7 @@ function FileUpload({ label, file, onChange, description }: FileUploadProps) {
             : "border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-600 bg-white dark:bg-gray-700"
         }`}
       >
-        <input
+        <Input
           type="file"
           onChange={handleFileChange}
           accept="image/jpeg,image/jpg,image/png,application/pdf"
